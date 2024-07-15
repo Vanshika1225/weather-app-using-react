@@ -1,0 +1,24 @@
+.Started-section {
+  background-color: rgb(195 195 229);
+  height: 641px;
+}
+
+.Starting-img img {
+  width: 20%;
+  margin-top: 8%;
+}
+
+.strting-button {
+  margin-top: 120px;
+}
+
+.strting-button button {
+  color: white;
+  background-color: rgb(75, 18, 165);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  font-weight: bolder;
+}
