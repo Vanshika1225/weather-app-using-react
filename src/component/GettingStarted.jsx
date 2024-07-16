@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from '../images/starting-img.webp'
 import { useNavigate } from "react-router-dom";
-import '../GettingStarted.jsx.css'
+import '../css/GettingStarted.jsx.css'
 
 const GettingStarted = () => {
     const navigate = useNavigate();

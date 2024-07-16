@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import '../secondsection.css'
+import '../css/secondsection.css'
 import axios from 'axios';
 import { GrLocation } from "react-icons/gr";
 import cloud from '../images/cloud.webp'
+import { WiWindBeaufort1 } from "react-icons/wi";
+import { FaTemperatureQuarter } from "react-icons/fa6";
+import { WiHumidity } from "react-icons/wi";
+
 const SecondSection = () => {
     const [location, setLocation] = useState('Mohali');
     const [error, setError] = useState(null);
@@ -11,8 +15,8 @@ const SecondSection = () => {
 
     const apiKey = '98c6f5ed79c6ca5b9153c59d3bd6fc83';
     useEffect(() => {
-        fetchWeatherData(location); // Fetch weather data on initial render
-    }, [location]); // Fetch whenever location changes
+        fetchWeatherData(location);
+    }, [location]);
 
 
     const fetchWeatherData = async (location) => {
@@ -28,7 +32,7 @@ const SecondSection = () => {
     }
 
     const handleEnterClick = (e) => {
-        if (location && e.key == 'Enter') {
+        if (location && e.key === 'Enter') {
             fetchWeatherData(location)
         }
     }
@@ -62,19 +66,39 @@ const SecondSection = () => {
                     <input type='text' placeholder='Enter Location...' value={location} onChange={(e) => setLocation(e.target.value)} onKeyDown={handleEnterClick} />
                 </form>
                 {loading && <p>{loading}</p>}
-
             </div>
 
             <div className="card">
                 <div className="container">
                     <div className='card-content'>
-                        <p>{new Date().toUTCString()}</p>
-                        <img src={cloud} />
+                        <p>{new Date().toString()}</p>
+                        <img src={cloud} alt='clouds' />
                         {weatherData && location !== '' && <h1>{weatherData.weather[0].main}, {weatherData.main.temp} °C</h1>}
                     </div>
                 </div>
             </div>
+
+            <div className='windtempHum'>
+                <div className='wind'>
+                    <WiWindBeaufort1 style={{fontSize:"30px",fontWeight:"bolder"}}/>
+                    <p>{weatherData && weatherData.wind.speed}Km/h</p>
+                    <p>Wind</p>
+                </div>
+                <div className='temp'>
+                    <FaTemperatureQuarter style={{fontSize:"20px",fontWeight:"bolder"}}/>
+                    <p>{weatherData && weatherData.main.temp} </p>
+                    <p>Temperature</p>
+                </div>
+                <div className='humidity'>
+                    <WiHumidity style={{fontSize:"30px",fontWeight:"bolder"}}/>
+                    <p>{weatherData && weatherData.main.humidity} </p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+
+            
         </>
     )
 }
+
 export default SecondSection
