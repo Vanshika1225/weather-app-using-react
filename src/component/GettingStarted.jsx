@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from './starting-img.webp'
+import Img from '../images/starting-img.webp'
 import { useNavigate } from "react-router-dom";
 import '../GettingStarted.jsx.css'
 

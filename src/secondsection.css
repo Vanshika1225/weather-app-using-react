@@ -3,3 +3,69 @@ body {
   color: white;
   height: 100%;
 }
+
+.input-field input{
+  text-indent: 13px;
+  padding: 5px 30px;
+}
+.input-field{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+form{
+  display: flex;
+}
+
+form input{
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 2px solid rgb(106, 33, 167);
+  border-radius: 25px;
+  box-shadow: 1px 1px #888888;
+  width: 400px;
+
+}
+
+form .icon{
+  position: absolute;
+  top: 35px;
+  left: 470px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input::placeholder{
+  color: white;
+}
+
+.card {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  margin: 30px auto;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card-content img{
+  width: 150px;
+  margin: 0px auto;
+}
+
+.card-content{
+  display: grid;
+  gap: 53px;
+}
