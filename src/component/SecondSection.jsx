@@ -71,7 +71,7 @@ const SecondSection = () => {
             <div className="card">
                 <div className="container">
                     <div className='card-content'>
-                        <p>{new Date().toString()}</p>
+                        <p>{new Date().toDateString()}</p>
                         <img src={cloud} alt='clouds' />
                         {weatherData && location !== '' && <h1>{weatherData.weather[0].main}, {weatherData.main.temp} °C</h1>}
                     </div>
@@ -95,8 +95,6 @@ const SecondSection = () => {
                     <p>Humidity</p>
                 </div>
             </div>
-
-            
         </>
     )
 }
